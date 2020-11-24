@@ -19,12 +19,12 @@ model = inception_v3(pretrained=True)
 # Load Data
 cat_images = []
 for i in range(1,total_image_no):
-    cat_image = Image.open("training_set/training_set/cats/cat." + str(i) + ".jpg")
+    cat_image = Image.open("training_set/cats/cat." + str(i) + ".jpg")
     cat_images.append(cat_image)
 
 dog_images = []
 for i in range(1,total_image_no):
-    dog_image = Image.open("training_set/training_set/dogs/dog." + str(i) + ".jpg")
+    dog_image = Image.open("training_set/dogs/dog." + str(i) + ".jpg")
     dog_images.append(dog_image)
 
 
