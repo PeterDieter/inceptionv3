@@ -1,7 +1,7 @@
 # InceptionV3 Model in Pytorch
 
 
-I am using the dog/cats dataset to retrain the model. To train the model run the script trainModel.py.
+I am using the dog/cats dataset (https://www.kaggle.com/chetankv/dogs-cats-images) to retrain the model. To train the model run the script trainModel.py.
 Please note that due to limited CPU capacity and not using cuda(), number of images passed through the NN at once is limited. 
 Make sure to have the training pictures in folder /training_set/training_set/cats and /training_set/training_set/dogs.
 
