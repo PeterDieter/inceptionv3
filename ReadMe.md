@@ -1,13 +1,14 @@
 # InceptionV3 Model in Pytorch
 
 
-I am using the dog/cats dataset to train the model. To train the model run the script trainModel.py. 
-Make sure to have the training picture in foler /training_set/training_set/cats and /training_set/training_set/dogs.
-The training plots are as follow:
+I am using the dog/cats dataset to train the model. To train the model run the script trainModel.py.
+Please note that due to limited CPU capacity and not using cuda(), number of images passed through the NN at once is limited. 
+Make sure to have the training pictures in folder /training_set/training_set/cats and /training_set/training_set/dogs.
+In training, accuracy converges to near 1, loss to near 0. In test set, accuracy is at 96.6%. 
+The training plots are as follows: 
 
 ## Training Accuracy Plot
 <img width="600" height="500" src="ReadMeImages/Accuracy.png">
 
 ## Training Cross Entropy Loss Plot
 <img width="600" height="500" src="ReadMeImages/CrossEntropyLoss.png">
-
