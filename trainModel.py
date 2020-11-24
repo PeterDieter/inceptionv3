@@ -66,6 +66,8 @@ for i in range(epochs):
     optimizer.step()    # Does the update
     print(accuracy)
 
+torch.save(model.state_dict(), 'bestmodel.pth')
+
 # Plot Accuracies
 plt.plot(accuracies)
 plt.xlabel('Epoch', fontsize=18)
