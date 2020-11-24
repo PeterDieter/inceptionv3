@@ -16,12 +16,12 @@ model.eval()
 # Load Data
 cat_images = []
 for i in range(4001, 4000 + total_image_no):
-    cat_image = Image.open("test_set/test_set/cats/cat." + str(i) + ".jpg")
+    cat_image = Image.open("test_set/cats/cat." + str(i) + ".jpg")
     cat_images.append(cat_image)
 
 dog_images = []
 for i in range(4001, 4000 + total_image_no):
-    dog_image = Image.open("test_set/test_set/dogs/dog." + str(i) + ".jpg")
+    dog_image = Image.open("test_set/dogs/dog." + str(i) + ".jpg")
     dog_images.append(dog_image)
 
 
