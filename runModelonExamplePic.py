@@ -6,7 +6,7 @@ from PIL import Image
 import torch.nn as nn
 
 
-cat_image = Image.open("cat_example2.jpg")
+cat_image = Image.open("images/cat_example2.jpg")
 cat_image = Preprocess().preprocess_image_data([cat_image])
 
 # Load Model
