@@ -172,7 +172,7 @@ class Inception3(nn.Module):
         # N x 768 x 17 x 17
         x = self.Mixed_7a(x)
         # N x 1280 x 8 x 8
-        x = self.Mixed_7b(x)x
+        x = self.Mixed_7b(x)
         # N x 2048 x 8 x 8
         x = self.Mixed_7c(x)
         # N x 2048 x 8 x 8

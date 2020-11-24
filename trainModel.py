@@ -8,10 +8,10 @@ import torch.nn as nn
 from torch.autograd import Variable
 import matplotlib.pyplot as plt
 
-
+torch.manual_seed(1)
 total_image_no = 1000
-epochs = 30
-batch_size = 32
+epochs = 25
+batch_size = 28
 
 # Load Model
 model = inception_v3(pretrained=True)
@@ -45,6 +45,7 @@ loss_function = torch.nn.CrossEntropyLoss()
 
 
 losses = []
+accuracies = []
 for i in range(epochs):
     rnd_indexes = torch.randint(len(all_images),[batch_size])
     image_batch = all_images[rnd_indexes]
@@ -56,11 +57,23 @@ for i in range(epochs):
     loss1 = loss_function(output[0], label_batch)
     loss2 = loss_function(output[1], label_batch)
     loss = loss1 + 0.4*loss2
+    predicted_class = torch.argmax(torch.nn.functional.softmax(output[0], dim=1),1)
+    accuracy = (predicted_class == label_batch).sum()/len(predicted_class)
+    accuracies.append(accuracy)
     losses.append(loss)
     
     loss.backward()
     optimizer.step()    # Does the update
-    print(loss)
+    print(accuracy)
 
+# Plot Accuracies
+plt.plot(accuracies)
+plt.xlabel('Epoch', fontsize=18)
+plt.ylabel('Accuracy', fontsize=16)
+plt.show()
+
+# Plot Losses
 plt.plot(losses)
+plt.xlabel('Epoch', fontsize=18)
+plt.ylabel('Cross Entropy Loss', fontsize=16)
 plt.show()
